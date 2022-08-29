@@ -1,0 +1,273 @@
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+
+body{
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #fff;
+  background-color: #000;
+  font-family: 'Anek Telugu',sans-serif;
+}
+
+/*      */
+/*  Navbar    */
+
+  
+.navbar-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.4rem 4.8rem 2.4rem 4.8rem;
+  height: 9.6rem;
+  width: 100%;
+}
+
+.navbar-list{
+  display: flex;
+  list-style-type: none;
+  gap: 4.4rem;
+}
+
+.navbar-list a:link,.navbar-list a:visited{
+  text-decoration: none;
+  color: #fff;
+  transition: all .3s ease;
+  position: relative;
+}
+
+.navbar-list a:after{
+  content: '';
+  position: absolute;
+  background-color: #ff3c78;
+  height: 3px;
+  width: 0;
+  left: 0;
+  top: -8px;
+  transition: .3s;
+}
+
+.navbar-list a:hover:after{
+  width: 100%;
+}
+
+/* REUSABLE */
+
+.container{
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+.grid {
+  display:grid;
+}
+.grid--2-cols
+{
+  grid-template-columns: repeat(2,1fr);
+}
+.grid--3-cols{
+  grid-template-columns: repeat(3,1fr);
+}
+
+.heading-primary{
+  font-weight: 800;
+  letter-spacing: -.5px;
+  font-size: 6.2rem;
+
+}
+
+.btn:link,.btn:visited {
+text-decoration: none;
+display: inline-block;
+  padding: 1.6rem;
+  background-color: red;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* BURGUER MENU */
+.burguer-wrapper{
+  cursor:pointer;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.burguer-line,.burguer-line::before,.burguer-line::after{
+  background-color:#fff ;
+  width: 70%;
+  height: 4px;
+  border-radius: 5px;
+}
+.burguer-line::before{
+  content: '';
+  transform: translateY(-1rem);
+  position: absolute;
+}
+.burguer-line::after{
+  content: '';
+  position: absolute;
+  transform:translateY(1rem)
+}
+
+
+
+/* HERO SECTION */
+
+.hero-section{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  
+ 
+}
+
+
+.hero{
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%)
+
+}
+
+.hero-text{
+  min-width: 38.675rem;
+}
+
+
+
+/* LEFT -RIGTH */
+.side-left{
+  width: 40px;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+}
+.side-left::after{
+  content: '';
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0px auto;
+  background-color: #ccd6f6;
+}
+.side-list{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+}
+i{
+  color: white;
+
+}
+
+
+
+
+
+.side-top-right{
+  width: 40px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: .8rem;
+  z-index: 10;
+
+}
+
+.side-top-right::after{
+  content: '';
+  display: block;
+  height: 90px;
+  width: 1px;
+  margin: 0 auto;
+  background-color: #ccd6f6;
+}
+.side-top-right-email{
+  writing-mode: vertical-lr;
+  letter-spacing: .1em;
+}
+.side-top-right-email:hover{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  MEDIA*/
+@media (max-width: 1100px){
+  .heading-primary{
+    font-size: 5.2rem;
+  }
+}
+
+
+
+
+
+@media (max-width: 630px){
+  .navbar-list{
+    display: none;
+  }
+}
+
+
+
+
+
+
