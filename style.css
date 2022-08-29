@@ -29,6 +29,7 @@ body{
   padding: 2.4rem 4.8rem 2.4rem 4.8rem;
   height: 9.6rem;
   width: 100%;
+  overflow: hidden;
 }
 
 .navbar-list{
@@ -146,7 +147,7 @@ display: inline-block;
 }
 
 .hero-text{
-  min-width: 38.675rem;
+  flex-direction: column;
 }
 
 
@@ -206,6 +207,7 @@ i{
   width: 1px;
   margin: 0 auto;
   background-color: #ccd6f6;
+
 }
 .side-top-right-email{
   writing-mode: vertical-lr;
@@ -263,6 +265,15 @@ i{
 @media (max-width: 630px){
   .navbar-list{
     display: none;
+  }
+  .heading-primary{
+    font-size: 3.6rem;
+  }
+  i{
+    font-size: 1rem;
+  }
+  .side-top-right-email{
+    font-size: 1rem;
   }
 }
 
