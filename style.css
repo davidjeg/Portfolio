@@ -314,7 +314,7 @@ width: 95%;
 .gsap::after{
   width: 95%;
 }
-.treejs::after{
+.threejs::after{
   width: 80%;
 }
 .tailwind::after{
@@ -344,6 +344,23 @@ width: 95%;
 
 
 
+.work-container{
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.work-img{
+  width: 100%;
+  max-width: 350px;
+  border-radius: 5px;
+  transition: transform .3s
+}
+.work-img:hover{
+
+  transform: scale(1.1)
+}
 
 
 
