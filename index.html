@@ -19,10 +19,11 @@
     <span class="logo">logo</span>
     <nav class="navbar">
       <ul class="navbar-list">
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">WORK</a></li>
-        <li><a href="#">CONTACT</a></li>
+        <li><a class="navbar-links" href="#hero-section">HOME</a></li>
+        <li><a class="navbar-links" href="#section-about">ABOUT</a></li>
+        <li><a class="navbar-links" href="#skills-section">SKILLS</a></li>
+        <li><a class="navbar-links" href="#section-works">WORK</a></li>
+        <li><a class="navbar-links" href="#section-contact">CONTACT</a></li>
       </ul>
     </nav>
     <div class="burguer-wrapper">
@@ -30,7 +31,7 @@
     </div>
   </div>
 
-  <header class="hero-section">
+  <header class="hero-section" id="hero-section">
     <div class="hero">
       <div class='hero-text'>
 
@@ -38,7 +39,7 @@
         <h1 class="heading-primary">DAVID</h1>
         <h1 class="heading-primary">WEB DEVELOPER</h1>
 
-        <a class='btn btn-contact' href="#">Contact</a>
+        <a class='btn btn-contact' href="#section-contact">Contact</a>
 
       </div>
 
@@ -51,22 +52,22 @@
     <ul class="side-list">
 
       <li>
-        <a href="#">
+        <a target="_blank" href="https://www.instagram.com/_david_desu/">
           <i class="fa-brands fa-instagram"></i>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a target="_blank" href="https://www.facebook.com/david.encarnacion.96592/">
           <i class="fa-brands fa-facebook-f"></i>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a target="_blank" href="https://github.com/davidjeg">
           <i class="fa-brands fa-github"></i>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a target="_blank" href="https://www.linkedin.com/in/david-encarnacion-gordillo-4057a5247/details/skills/">
           <i class="fa-brands fa-linkedin-in"></i>
         </a>
       </li>
@@ -164,30 +165,81 @@
 
 
     <!-- WORKS SECTION  -->
-    <section class="section-works">
+    <section class="section-works" id="section-works">
       <h2 class="heading-secondary">Works</h2>
       <div class="container grid grid--3-cols gap--3-cols">
 
 
         <div class="work-container">
-          <img class="work-img" src="https://i.imgur.com/TGcVCTe.png" alt="technical-documetation">
+          <a target="_blank" href="https://davidjeg.github.io/Technical-Documentation/">
+
+            <img class="work-img" src="https://i.imgur.com/TGcVCTe.png" alt="technical-documetation">
+          </a>
         </div>
         <div class="work-container">
-          <img class="work-img" src="https://i.imgur.com/qo6z5UD.png" alt="surver-form">
+          <a target="_blank" href="https://davidjeg.github.io/Survey-form/">
+
+            <img class="work-img" src="https://i.imgur.com/qo6z5UD.png" alt="surver-form">
+          </a>
         </div>
         <div class="work-container">
-          <img class="work-img" src="https://i.imgur.com/0Hl1AoV.png" alt="landing-page">
+          <a target="_blank" href="https://davidjeg.github.io/landing-page/">
+
+            <img class="work-img" src="https://i.imgur.com/0Hl1AoV.png" alt="landing-page">
+          </a>
         </div>
 
         <div class="work-container tribute-position">
-          <img class="work-img" src="https://i.imgur.com/ykn42NS.png" alt="tribute page">
+          <a target="_blank" href="https://davidjeg.github.io/freecodecamp-tribute-page/">
+
+            <img class="work-img" src="https://i.imgur.com/ykn42NS.png" alt="tribute page">
+          </a>
         </div>
       </div>
     </section>
 
 
-    /* CONTACT */
-    <section class="section-contact">
+
+    <!--CONTACT-->
+    <section class="section-contact" id="section-contact">
+      <h2 class="heading-secondary">Contact</h2>
+      <div class="container contact-grid">
+        <div class="contact-icons">
+          <div class="contact-icon-wrapper">
+            <h3 class="heading-thertiary">Phone</h3>
+
+            <i class="fa-solid fa-phone icon-contact"></i>
+            <p>+593980583481</p>
+          </div>
+          <div class="contact-icon-wrapper">
+
+            <h3 class="heading-thertiary">Email</h3>
+            <i class="fa-solid fa-envelope icon-contact"></i>
+            <p>davideg96@outlook.com</p>
+          </div>
+          <div class="contact-icon-wrapper">
+            <h3 class="heading-thertiary">Address</h3>
+            <i class="fa-solid fa-location-dot icon-contact"></i>
+            <p>Av. Del Ejercito y Jose Duran</p>
+          </div>
+
+
+        </div>
+        <form class="contact-form">
+
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Enter Your Name">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder='Type Your Email'>
+          <label for="textarea">Message</label>
+          <textarea id="textarea" placeholder="Type Your Message"></textarea>
+
+          <button class="btn-submit" type="submit">Send Message</button>
+
+
+        </form>
+
+      </div>
 
     </section>
 
@@ -195,6 +247,49 @@
   </main>
 
 
+  <script>
+    const allLinks = document.querySelectorAll('.navbar-links');
+    const navbarTop = document.querySelector('.navbar-top')
+    const burguerContainer = document.querySelector('.burguer-wrapper')
+
+    allLinks.forEach(function (links) {
+      links.addEventListener('click', function (e) {
+        e.preventDefault();
+        navbarTop.classList.remove('open')
+
+        const href = links.getAttribute('href')
+        if (href !== '#' && href.startsWith('#')) {
+          const sectionEl = document.querySelector(href)
+          sectionEl.scrollIntoView({behavior: 'smooth'})
+        }
+
+      })
+    })
+
+    window.addEventListener('resize', () => {
+      const windowWidth = window.innerWidth;
+      if (windowWidth > 630) {
+
+        navbarTop.classList.remove('open')
+        console.log('test')
+      }
+    })
+
+
+
+
+    /* BURGUER */
+    let isBurguerOpen = false;
+    if (!isBurguerOpen) {
+      burguerContainer.addEventListener('click', () => {
+        navbarTop.classList.toggle('open')
+      })
+
+    } else {
+      isBurguerOpen = false;
+    }
+
+  </script>
 
 
 
