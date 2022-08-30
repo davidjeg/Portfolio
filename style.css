@@ -361,6 +361,11 @@ width: 95%;
 
   transform: scale(1.1)
 }
+.tribute-position{
+  grid-row: 2;
+  grid-column: 2/3;
+
+}
 
 
 
@@ -399,6 +404,11 @@ width: 95%;
   .hero-text{
     min-width: 30rem;
 
+  }
+  .grid--3-cols{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
