@@ -48,6 +48,8 @@
     </div>
 
   </header>
+
+
   <div class="side-left">
     <ul class="side-list">
 
@@ -251,6 +253,7 @@
     const allLinks = document.querySelectorAll('.navbar-links');
     const navbarTop = document.querySelector('.navbar-top')
     const burguerContainer = document.querySelector('.burguer-wrapper')
+    const heroSection = document.querySelector('#hero-section')
 
     allLinks.forEach(function (links) {
       links.addEventListener('click', function (e) {
@@ -266,6 +269,7 @@
       })
     })
 
+    /* REMOVE OPEN CLASS ON RESIZE */
     window.addEventListener('resize', () => {
       const windowWidth = window.innerWidth;
       if (windowWidth > 630) {
@@ -274,6 +278,36 @@
         console.log('test')
       }
     })
+
+
+    /* INTERSECT */
+    const options = {
+
+      root: null,
+      rootMargin: '-80px',
+      threshold: 1,
+    }
+
+    const obs = new IntersectionObserver((entries) => {
+      const ent = entries[0];
+      console.log(ent)
+      if (!ent.isIntersecting) {
+        document.body.classList.add('sticky')
+      }
+      if (ent.isIntersecting) {
+        document.body.classList.remove('sticky')
+      }
+    }, {
+      root: null,
+
+      threshold: 0,
+      rootMargin: '-80px'
+    })
+    obs.observe(heroSection)
+
+
+
+
 
 
 
